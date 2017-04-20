@@ -10,7 +10,14 @@
   <%= @user.email %>
 </p>
 
-<p>This is the first comment of <%= @user.name %>: <%= @user.microposts.first.content %></p>
+<p>This is the first comment of <%= @user.name %>: </p>
+<p>
+  <% if @user.microposts.first.nil? %>
+    <p>no msg</p>
+  <% else %>
+    <%= @user.microposts.first.content %>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
