@@ -55,4 +55,8 @@ but they use different http request, different action, no problem.
 - What is REST? Resource can perform CRUD with relational database and HTTP request verbs
 
 REST means that most application components (such as users and microposts) are modeled as "resources" that can be created, read, updated, and deleted—operations that correspond both to the "CRUD" operations of "relational databases" and to the four "fundamental HTTP request methods": POST, GET, PATCH, and DELETE
--
+- def micropost_params
+    params.require(:micropost).permit(:content, :user_id)
+  end
+
+  means allow to get micropost but have to put id and after that what we can get from micropost object are only content and user_d
